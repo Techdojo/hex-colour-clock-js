@@ -1,9 +1,13 @@
-function Hex_Clock(){
+function Hex_Clock(config){
     "use strict";
 
-    var _element = null,
-        _body = document.getElementsByTagName('body')[0],
-        exports = {};
+    var _config = {},
+        exports = {},
+        _body = document.getElementsByTagName('body')[0];
+
+    _config = {
+        element: config.element
+    }
 
     function _render_time(){
         var html = [],
@@ -13,7 +17,6 @@ function Hex_Clock(){
             seconds = (date.getSeconds() <= 9) ? '0' + date.getSeconds() : date.getSeconds(),
             hex = '#' + hour + mins + seconds;
 
-        _body.style.backgroundColor = hex;
 
         html.push('<div id="hex-clock-time" class="hex-clock-colour">');
         html.push('<span class="hex-symbol">#</span>');
@@ -23,16 +26,17 @@ function Hex_Clock(){
         html.push('</div>');
         html.push('<div id="hex-clock-colour" class="hex-clock-time">' + (hour + ':' + mins + ':' + seconds) + '</div>');
 
-        _element.innerHTML = html.join('');
+        _config.element.innerHTML = html.join('');
+        _body.style.backgroundColor = hex;
+
         setTimeout(_render_time, 1000);
     };
 
     function _add_class_to_wrap_element(){
-        _element.className += _element.className ? ' hex-clock-wrap' : 'hex-clock-wrap';
+        _config.element.className += _config.element.className ? ' hex-clock-wrap' : 'hex-clock-wrap';
     };
 
-    exports.init = function(element){
-        _element = element
+    exports.init = function(){
         _add_class_to_wrap_element();
         _render_time();
     };
@@ -41,5 +45,7 @@ function Hex_Clock(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-    Hex_Clock().init(document.getElementById('hex-clock-wrap'));
+    Hex_Clock({
+        element: document.getElementById('hex-clock-wrap')
+    }).init();
 }, false);
