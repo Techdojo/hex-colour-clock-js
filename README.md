@@ -39,7 +39,7 @@ A custom element, present on the page, to render the time inside of. `render_tim
 ### Example Usage
 ```js
 var clock = Hex_Clock({
-    element: document.getElementById('hex-clock-wrap'),
+    element: document.getElementById('hex-clock-wrap')
 });
 
 clock.init();
