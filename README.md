@@ -38,6 +38,13 @@ A custom element, present on the page, to render the time inside of. `render_tim
 
 ### Example Usage
 ```js
+var clock = Hex_Clock({
+    element: document.getElementById('hex-clock-wrap'),
+});
+
+clock.init();
+```
+```js
 Hex_Clock({
     // Element that the hex clock will be added to
     element: document.getElementById('hex-clock-wrap'),
@@ -49,11 +56,4 @@ Hex_Clock({
     //Custom Element to render the clock in
     clock_element: document.getElementById('custom-clock-element')
 }).init();
-```
-```js
-var clock = Hex_Clock({
-    element: document.getElementById('hex-clock-wrap'),
-});
-
-clock.init();
 ```
