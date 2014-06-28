@@ -6,7 +6,8 @@ function Hex_Clock(config){
         _body = document.getElementsByTagName('body')[0];
 
     _config = {
-        element: config.element
+        element: config.element,
+        render_time: ((config.render_time !== undefined) ? config.render_time : true )
     }
 
     function _render_time(){
@@ -17,14 +18,16 @@ function Hex_Clock(config){
             seconds = (date.getSeconds() <= 9) ? '0' + date.getSeconds() : date.getSeconds(),
             hex = '#' + hour + mins + seconds;
 
-
         html.push('<div id="hex-clock-time" class="hex-clock-colour">');
         html.push('<span class="hex-symbol">#</span>');
         html.push('<span class="hex-section hex-hours">' + hour + '</span>');
         html.push('<span class="hex-section hex-mins">' + mins + '</span>');
         html.push('<span class="hex-section hex-seconds">' + seconds + '</span>');
         html.push('</div>');
-        html.push('<div id="hex-clock-colour" class="hex-clock-time">' + (hour + ':' + mins + ':' + seconds) + '</div>');
+
+        if(_config.render_time){
+            html.push('<div id="hex-clock-colour" class="hex-clock-time">' + (hour + ':' + mins + ':' + seconds) + '</div>');
+        }
 
         _config.element.innerHTML = html.join('');
         _body.style.backgroundColor = hex;
@@ -37,6 +40,9 @@ function Hex_Clock(config){
     };
 
     exports.init = function(){
+
+        console.log('internal config', _config);
+
         _add_class_to_wrap_element();
         _render_time();
     };
