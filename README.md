@@ -37,7 +37,6 @@ Optional: `Yes`
 A custom element, present on the page, to render the time inside of. `render_time` must be true for this to take effect.
 
 ### Example Usage
-
 ```js
 Hex_Clock({
     // Element that the hex clock will be added to
@@ -50,4 +49,11 @@ Hex_Clock({
     //Custom Element to render the clock in
     clock_element: document.getElementById('custom-clock-element')
 }).init();
+```
+```js
+var clock = Hex_Clock({
+    element: document.getElementById('hex-clock-wrap'),
+});
+
+clock.init();
 ```
