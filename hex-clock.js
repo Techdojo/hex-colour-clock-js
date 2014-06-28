@@ -7,7 +7,8 @@ function Hex_Clock(config){
 
     _config = {
         element: config.element,
-        render_time: ((config.render_time !== undefined) ? config.render_time : true )
+        render_time: ((config.render_time !== undefined) ? config.render_time : true ),
+        clock_element: ((config.clock_element !== undefined) ? config.clock_element : false )
     }
 
     function _render_time(){
@@ -26,7 +27,7 @@ function Hex_Clock(config){
         html.push('</div>');
 
         if(_config.render_time){
-            html.push('<div id="hex-clock-colour" class="hex-clock-time">' + (hour + ':' + mins + ':' + seconds) + '</div>');
+            html.push(_get_clock_html(hour, mins, seconds));
         }
 
         _config.element.innerHTML = html.join('');
@@ -35,11 +36,21 @@ function Hex_Clock(config){
         setTimeout(_render_time, 1000);
     };
 
+    function _get_clock_html(hour, mins, seconds) {
+        if(_config.clock_element){
+            _config.clock_element.innerHTML = (hour + ':' + mins + ':' + seconds);
+        } else {
+            return '<div id="hex-clock-colour" class="hex-clock-time">' + (hour + ':' + mins + ':' + seconds) + '</div>';
+        }
+    }
+
     function _add_class_to_wrap_element(){
         _config.element.className += _config.element.className ? ' hex-clock-wrap' : 'hex-clock-wrap';
     };
 
     exports.init = function(){
+        console.log('internal config', _config);
+
         _add_class_to_wrap_element();
         _render_time();
     };
@@ -50,5 +61,7 @@ function Hex_Clock(config){
 document.addEventListener('DOMContentLoaded', function(){
     Hex_Clock({
         element: document.getElementById('hex-clock-wrap')
+        // render_time: false
+        // clock_element: document.getElementById('actual-time')
     }).init();
 }, false);
