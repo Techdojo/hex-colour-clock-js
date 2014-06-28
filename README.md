@@ -32,7 +32,22 @@ Show/hide the time
 
 Type: `Element Object`
 Default: `null`
+Optional: `Yes`
 
-A custom element can be passed in render the time inside of the provided DOM Element. 
+A custom element, present on the page, to render the time inside of. `render_time` must be true for this to take effect.
 
+### Example Usage
 
+```js
+    Hex_Clock({
+        // Element that the hex clock will be added to
+        element: document.getElementById('hex-clock-wrap'),
+
+        //On / Off Switch for displaying / hiding the time
+        //Defaults to true, only shown for example purposes
+        render_time: true,
+        
+        //Custom Element to render the clock in
+        clock_element: document.getElementById('custom-clock-element')
+    }).init();
+```
