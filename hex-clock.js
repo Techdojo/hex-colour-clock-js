@@ -40,9 +40,6 @@ function Hex_Clock(config){
     };
 
     exports.init = function(){
-
-        console.log('internal config', _config);
-
         _add_class_to_wrap_element();
         _render_time();
     };
