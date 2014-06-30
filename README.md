@@ -13,6 +13,17 @@ The concept is not of my own, however, all code is original, from scratch.
 TL;DR - Simple piece of code for a js hex colour clock
 
 
+### Simple Usage
+
+There is only one public function, the .init() function. Prior to which a configuration object is required to be passed when instantiating the object.
+
+```js
+Hex_Clock({
+    element: document.getElementById('hex-clock-wrap')
+}).init();
+
+```
+
 ### Configuration
 
 
