@@ -2,7 +2,9 @@ Hex Colour JS Clock
 ============
 
 
-Interested in a concept I saw, http://www.jacopocolo.com/hexclock/, I deciced to implement a version myself
+Interested in a concept I saw, http://www.jacopocolo.com/hexclock/, I deciced to implement a version myself.
+
+This is by no means a serious project and has not been given the benefit of tests, wide browser compatibility tests etc. It is mainly proposed as a reference for myself and anyone who wishes to get insight from, if any, the code held in this repo. 
 
 A hex clock being a JavaScript clock where a colour on screen, in this case the page background, corresponds to the current time. For example, for the time of 12:00:00 the background would be the colour of #120000.
 
