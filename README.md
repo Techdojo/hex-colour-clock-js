@@ -21,7 +21,6 @@ There is only one public function, the .init() function. Prior to which a config
 Hex_Clock({
     element: document.getElementById('hex-clock-wrap')
 }).init();
-
 ```
 
 ### Configuration
