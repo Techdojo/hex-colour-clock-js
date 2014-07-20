@@ -63,15 +63,21 @@ var clock = Hex_Clock({
 clock.init();
 ```
 ```js
-Hex_Clock({
-    // Element that the hex clock will be added to
-    element: document.getElementById('hex-clock-wrap'),
 
-    //Bool for displaying / hiding the time
-    //Defaults to true, only shown for example purposes
-    render_time: true,
+document.addEventListener('DOMContentLoaded', function(){
+    "use strict";
+
+    Hex_Clock({
+        // Element that the hex clock will be added to
+        element: document.getElementById('hex-clock-wrap'),
+
+        //Bool for displaying / hiding the time
+        //Defaults to true, only shown for example purposes
+        render_time: true,
         
-    //Custom Element to render the clock in
-    clock_element: document.getElementById('custom-clock-element')
-}).init();
+        //Custom Element to render the clock in
+        clock_element: document.getElementById('custom-clock-element')
+    }).init();
+
+}, false);
 ```
