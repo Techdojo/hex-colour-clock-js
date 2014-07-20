@@ -88,24 +88,3 @@ function Hex_Clock(config){
     //Return public methods object
     return exports;
 }
-
-
-document.addEventListener('DOMContentLoaded', function(){
-    "use strict";
-
-    /////////////////////////////////////
-    //Instantiate New Hex_Clock object //
-    /////////////////////////////////////
-
-    Hex_Clock({
-        // Element that the hex clock will be added to
-        element: document.getElementById('hex-clock-wrap'),
-
-        //On / Off Switch for displaying / hiding the time
-        render_time: true,
-
-        //Custom Element to render the clock in
-        //clock_element: document.getElementById('element-id')
-    }).init();
-
-}, false);
