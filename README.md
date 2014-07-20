@@ -8,7 +8,7 @@ A hex clock being a JavaScript clock where a colour on screen, in this case the 
 
 This is by no means a serious piece of code and has not been given the benefit of unit tests, wide browser compatibility tests etc. It is mainly proposed as a reference for myself and anyone who wishes to get insight from, if any, the code held in the module. 
 
-Whilst the concept is not of my own all code is original and from scratch. The implementation uses the JavaScript module pattern, specifically the [Christian Heilmann's revealing pattern](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript "Revealing Pattern reference") and as such does not require newing up.
+Whilst the concept is not of my own all code is original and from scratch. The implementation uses the JavaScript module pattern, specifically [Christian Heilmann's revealing pattern](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript "Revealing Pattern reference") and as such does not require newing up.
 
 TL;DR - Simple piece of code for a js hex colour clock
 
