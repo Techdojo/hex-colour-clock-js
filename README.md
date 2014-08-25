@@ -28,7 +28,7 @@ Hex_Clock({
 
 #### element
 
-Type: `[Element] Object`
+Type: `[HTMLElement] Object`
 Default: `None`
 Optional: `No`
 
@@ -47,7 +47,7 @@ Show/hide the time.
 
 #### clock_element
 
-Type: `[Element] Object`
+Type: `[HTMLElement] Object`
 Default: `null`
 Optional: `Yes`
 
