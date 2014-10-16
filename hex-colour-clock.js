@@ -35,6 +35,7 @@ function Hex_Clock(config){
             hour = (date.getHours() <= 9) ? '0' + date.getHours() : date.getHours(),
             mins = (date.getMinutes() <= 9) ? '0' + date.getMinutes() : date.getMinutes(),
             seconds = (date.getSeconds() <= 9) ? '0' + date.getSeconds() : date.getSeconds(),
+            milliseconds = date.getMilliseconds(),
             hex = '#' + hour + mins + seconds;
 
         //Build HTML
@@ -57,7 +58,8 @@ function Hex_Clock(config){
         _body.style.backgroundColor = hex;
 
         //timeout to call itself every 1 second
-        setTimeout(_render_time, 1000);
+        //takes away current millseconds passed so it always starts on the actual second on the first hit
+        setTimeout(_render_time, 1000 - milliseconds);
     }
 
     function _set_clock_html(hour, mins, seconds) {
